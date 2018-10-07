@@ -3,7 +3,6 @@ package qm;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -179,10 +178,10 @@ public class GUI extends JFrame implements ActionListener{
 			mOutput.setText("\n Please input integers.");
 		} 
 		if (passed == true){
-			Qm qm = new Qm(qmSize,intList, dontCaresList, selectedSB.getActionCommand().equals("MSB"));
+			qm.Qm qm = new qm.Qm(qmSize,intList, dontCaresList, selectedSB.getActionCommand().equals("MSB"));
 			try {
 				mOutput.setText("\n Solution: " + qm.calculate());
-			} catch (IncorrectSizeException e1) {
+			} catch (qm.IncorrectSizeException e1) {
 				mOutput.setText("\n Ensure that size is large enough to cover all minterms");
 			}
 		}
